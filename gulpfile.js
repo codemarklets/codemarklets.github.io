@@ -18,8 +18,8 @@ gulp.task('copyIndex', function() {
 	//console.log("Copied index.html");
 });
 
-gulp.task('copyHtml', /*['copyIndex'], */ function() {
-	gulp.src('.app/**/*.html').pipe(gulp.dest('./dist/html'));
+gulp.task('copyHtml', function() { /*['copyIndex'], */
+	gulp.src('./app/**/*.html').pipe(gulp.dest('./dist'));
 	console.log("Copied all html files");
 });
 

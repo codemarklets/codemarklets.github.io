@@ -1,0 +1,35 @@
+::selection {
+    text-shadow: none;
+    color: #333;
+    background: #FFF04F;
+}
+
+header, footer {
+	color: #fff;
+	background-color: teal;
+	text-align: center;
+}
+
+header {
+	height: 100px;
+	padding: 17px 0;
+}
+
+header .container {
+	margin: auto;
+}
+
+header .title, header .sub-title {
+	margin: 0px;
+	padding: 0px;
+}
+
+footer {
+	height: 50px;
+	padding: 17px 0;
+}
+
+
+#main {
+	margin: 10px 0;
+}

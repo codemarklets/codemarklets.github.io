@@ -1,16 +1,32 @@
 <!doctype html>
-<html data-ng-app="time-quote" data-ng-csp="">
-  <head>
-    <meta charset="UTF-8">
-    <title>Code Marks</title>
-    <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./dist/css/main.css">
-  </head>
-  <body>
-    <div class="container">
-    	It has serveral bookmarks for code snippets, which are useful to developer to run some tests on there projects. It is very easy use. Just bookmark your interest link as shown below. Open your project and click on the bookmark to test the code.
-    	"Need to as gif image"
-    </div>
-    <script src="./dist/bundle.js"></script>
-  </body>
+<html ng-app="codemarks" ng-csp="">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Bookmarks for code snippets, which will useful to developer to execute some tests on their projects.">
+		<meta name="author" content="Narendra Kurapati">
+		<title>Codemarks</title>
+		<link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./dist/css/main.css">
+	</head>
+	<body>
+		
+		<header>
+			<div class="container">
+				<h1 class="title">Codemarks</h1>
+				<h3 class="sub-title">Bookmarks for code snippets</h3>
+			</div>
+		</header>
+		<div id="main">
+			<div class="container">
+				<div ui-view></div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+			@Narendra Kurapati
+			</div>
+		</footer>
+		<script src="./dist/bundle.js"></script>
+	</body>
 </html>
