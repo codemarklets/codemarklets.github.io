@@ -1,12 +1,12 @@
 ::selection {
     text-shadow: none;
-    color: #333;
-    background: #FFF04F;
+    color: #fff;
+    background: #008080;
 }
 
 header, footer {
 	color: #fff;
-	background-color: teal;
+	background-color: #008080;
 	text-align: center;
 }
 
@@ -22,6 +22,9 @@ header .container {
 header .title, header .sub-title {
 	margin: 0px;
 	padding: 0px;
+}
+header .title{
+	text-transform: uppercase;
 }
 
 footer {

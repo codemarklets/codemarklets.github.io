@@ -3,4 +3,16 @@
 		It has serveral bookmarks for code snippets, which are useful to developer to run some tests on there projects. It is very easy use. Just bookmark your interest link as shown below. Open your project and click on the bookmark to test the code.
 		"Need to as gif image"
 	</div>
+	<div>Usage</div>
+	<div>
+		<div>Codemarks</div>
+		<section ng-repeat="section in sections">
+			<div>{{section.name}}</div>
+			<ul class="list">
+				<li class="item" ng-repeat="item in section.items">
+					<a href="{{item.callback}}">{{item.name}}</a>
+				</li>
+			</ul>
+		</section>
+	</div>
 </div>
