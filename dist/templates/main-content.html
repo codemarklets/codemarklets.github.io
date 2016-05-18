@@ -1,16 +1,24 @@
 <div class="main-content">
 	<div class="description">
-		It has serveral bookmarks for code snippets, which are useful to developer to run some tests on there projects. It is very easy use. Just bookmark your interest link as shown below. Open your project and click on the bookmark to test the code.
+		It has serveral bookmarklets for code snippets, which are useful to developer to run some tests on there projects. It is very easy use. Just bookmark your interest link as shown below. Open your project and click on the bookmark to test the code.
 		"Need to as gif image"
 	</div>
 	<div>Usage</div>
 	<div>
-		<div>Codemarks</div>
-		<section ng-repeat="section in sections">
-			<div>{{section.name}}</div>
+		<div>Codemarklets</div>
+		<section ng-repeat="(section, items) in sections">
+			<div>{{section}}</div>
 			<ul class="list">
-				<li class="item" ng-repeat="item in section.items">
-					<a href="{{item.callback}}">{{item.name}}</a>
+				<li class="item" ng-repeat="item in items">
+					<a href="{{item.bookmarklet}}">{{item.title}}</a>
+					<div>{{item.description}}</div>
+					<a href="{{item.link}}" ng-if="item.link">Source</a>
+					<ul>
+						<div>References</div>
+						<li ng-repeat="link in item.references">
+							<a href="{{link}}">{{link}}</a>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</section>

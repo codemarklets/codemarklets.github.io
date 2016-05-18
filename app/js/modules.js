@@ -1,2 +1,3 @@
 var angular = require('angular');
-angular.module('codemarks', ['ui.router'])
+require('./function.js');
+angular.module('codemarklets', ['ui.router'])

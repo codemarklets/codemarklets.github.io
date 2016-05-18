@@ -1,7 +1,7 @@
 var angular = require('angular');
 require('angular-ui-router');
 require('./main-controller.js');
-angular.module('codemarks')
+angular.module('codemarklets')
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 	// For any unmatched url, redirect to
 	$urlRouterProvider.otherwise("");

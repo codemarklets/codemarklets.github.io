@@ -1,12 +1,8 @@
 var angular = require('angular');
 require('./utilities.js');
-angular.module('codemarks')
-.controller('mainController', ['$scope', 'utilities', function($scope, $utilities) {
-	$scope.sections = [{
-		name: 'HTML',
-		items : [{
-			name: 'codemark',
-			callback: "alert"
-		}]
-	}];
+require('./bookmarklets.js');
+angular.module('codemarklets')
+.controller('mainController', ['$scope', 'utilities', 'bookmarklets', function($scope, $utilities, $bookmarklets) {
+	var items = $bookmarklets.getItems();
+	$scope.sections = $utilities.buildBookletsCategories(items);
 }]);

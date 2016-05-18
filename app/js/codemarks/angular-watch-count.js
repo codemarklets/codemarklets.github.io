@@ -1,18 +1,5 @@
-/*
-Clearing cookies
-http://code.tutsplus.com/tutorials/create-bookmarklets-the-right-way--net-18154
-javascript:function(){
-    var c=document.cookie.split(";");
-    for(var i=0;i<c.length;i++){
-        var e=c[i].indexOf("=");
-        var n=e>-1?c[i].substr(0,e):c[i];
-        document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    }
-}()
-
-
-Counting The Number Of Watchers In AngularJS
-http://www.bennadel.com/blog/2698-counting-the-number-of-watchers-in-angularjs.htm
+//Counting The Number Of Watchers In AngularJS
+//http://www.bennadel.com/blog/2698-counting-the-number-of-watchers-in-angularjs.htm
 function getWatchCount() {
 		var total = 0;
 		// AngularJS denotes new scopes in the HTML markup by appending the
@@ -49,4 +36,3 @@ function getWatchCount() {
 	);
 	return( getWatchCount );
 }
-*/
