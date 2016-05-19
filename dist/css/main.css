@@ -3,6 +3,10 @@
     color: #fff;
     background: #008080;
 }
+.demo {
+	background-color: yellow;
+	text-align: center;
+}
 
 header, footer {
 	color: #fff;

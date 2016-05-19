@@ -3,6 +3,7 @@ var LiveServer = require("gulp-live-server");
 var browserSync = require("browser-sync");
 var browserify = require("browserify");
 var source = require("vinyl-source-stream");
+var concat = require("gulp-concat");
 
 gulp.task("live-server", function() {
 	browserSync.init({
@@ -39,8 +40,13 @@ gulp.task('copy', ['copyHtml', 'copyCSS', 'copyImages'], function() {
 	console.log("Coping files is completed...");
 });
 
+gulp.task('merge-bookmarklets', function() {
+	return gulp.src(["./app/js/bookmarklets.js", "./app/js/codemarklets/*.js"])
+		.pipe(concat("bookmarklets-merge.js"))
+		.pipe(gulp.dest('./app/js/'));
+})
 
-gulp.task("bundle", ["copy"], function() {
+gulp.task("bundle", ["copy", "merge-bookmarklets"], function() {
     return browserify({
         entries: "./app/app.js",
         debug: true
@@ -52,11 +58,11 @@ gulp.task("bundle", ["copy"], function() {
 
 gulp.task("serve", ["bundle","live-server"], function() {
 	console.log("Server is running...");
+	
+	gulp.task("watch", ["bundle"], browserSync.reload);
+	
+	gulp.watch("./app/**/*.js", ["watch"]);
+
+	gulp.watch("./app/**/*.html", ["copyHtml"]);
+	gulp.watch("./app/**/*.css", ["copyCSS"]);
 });
-
-gulp.task("watch", ["bundle"], browserSync.reload);
-gulp.watch("./app/**/*.jsx", ["watch"]);
-gulp.watch("./app/**/*.js", ["watch"]);
-
-gulp.watch("./app/**/*.html", ["copyHtml"]);
-gulp.watch("./app/**/*.css", ["copyCSS"]);

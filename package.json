@@ -31,6 +31,7 @@
     "browser-sync": "^2.12.5",
     "browserify": "^13.0.1",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
     "gulp-live-server": "0.0.29",
     "vinyl-source-stream": "^1.1.0"
   }

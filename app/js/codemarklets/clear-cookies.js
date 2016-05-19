@@ -1,6 +1,6 @@
-//Clear Cookies
 (function() {
 
+//Clear Cookies
 function clearCookies(){
     var cookies = document.cookie.split(";");
 	var len = cookies.length;
@@ -14,7 +14,7 @@ function clearCookies(){
 }
 
 var codemark = {
-	'tags': "cookies",
+	'tags': "cookies, js",
 	'title': "Clear Cookies",
 	'description': "It will clear the cookes for current document",
 	'code': clearCookies.toString(),
@@ -27,4 +27,4 @@ var codemark = {
 
 ITEMS.push(codemark);
 
-})();
+}());
