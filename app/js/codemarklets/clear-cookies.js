@@ -14,7 +14,7 @@ function clearCookies(){
 }
 
 var codemark = {
-	'tags': "cookies, js",
+	'tags': "cookies",
 	'title': "Clear Cookies",
 	'description': "It will clear the cookes for current document",
 	'code': clearCookies.toString(),

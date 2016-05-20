@@ -4,5 +4,4 @@ Function.prototype.minify = function() {
 
 Function.prototype.bookmarkLet = function() {
 	return ("javascript:(" + this.minify() + ")();void(0);");
-	//return ("javascript:(alert('hi'))();void(0);");
 }

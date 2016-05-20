@@ -10,7 +10,7 @@
 			<div>{{section}}</div>
 			<ul class="list">
 				<li class="item" ng-repeat="item in items">
-					<a href="{{item.bookmarklet}}">{{item.title}}</a>
+					<a cust-bookmarklet="item.bookmarklet">{{item.title}}</a>
 					<div>{{item.description}}</div>
 					<a href="{{item.link}}" ng-if="item.link">Source</a>
 					<ul>

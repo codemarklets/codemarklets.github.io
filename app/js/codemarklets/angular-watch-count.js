@@ -13,26 +13,29 @@
 		// to access the DOM (Document Object Model). But, in this case,
 		// we're not really building a true AngularJS service, so we can
 		// break the rules a bit.
-		angular.element( ".ng-scope" ).each(
-			function ngScopeIterator() {
+		angular.element(".ng-scope")
+			.each(function ngScopeIterator() {
 				// Get the scope associated with this element node.
-				var scope = $( this ).scope();
+				var scope = $(this).scope();
 				// The $$watchers value starts out as NULL.
-				total += scope.$$watchers
-					? scope.$$watchers.length
-					: 0
+				total += scope.$$watchers ? scope.$$watchers.length : 0
 				;
-			}
-		);
-		return( total );
+			});
+		
+		alert(total + ((total == 1)?' Watch is':' Watchers are' + ' using in the application'));
 	}
-	// For convenience, let's serialize the above method and convert it to
-	// a bookmarklet that can easily be run on ANY AngularJS page.
-	getWatchCount.bookmarklet = (
-		"javascript:alert('Watchers:'+(" +
-		getWatchCount.toString()
-			.replace( /\/\/.*/g, " " )
-			.replace( /\s+/g, " " ) +
-		")());void(0);"
-	);
+	
+	var codemark = {
+		'tags': "angular",
+		'title': "Counting The Number Of Watchers In AngularJS App",
+		'description': "It let you konw how many watchers are running currently",
+		'code': getWatchCount.toString(),
+		'bookmarklet': getWatchCount.bookmarkLet(),
+		'link':'',
+		'references': [
+			'http://www.bennadel.com/blog/2698-counting-the-number-of-watchers-in-angularjs.htm'
+		]
+	}
+
+	ITEMS.push(codemark);
 }());
