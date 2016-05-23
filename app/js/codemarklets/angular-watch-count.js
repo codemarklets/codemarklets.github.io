@@ -13,14 +13,21 @@
 		// to access the DOM (Document Object Model). But, in this case,
 		// we're not really building a true AngularJS service, so we can
 		// break the rules a bit.
-		angular.element(".ng-scope")
+		/*angular.element(".ng-scope")
 			.each(function ngScopeIterator() {
 				// Get the scope associated with this element node.
 				var scope = $(this).scope();
 				// The $$watchers value starts out as NULL.
 				total += scope.$$watchers ? scope.$$watchers.length : 0
 				;
-			});
+			});*/
+		
+		var ngscopes = document.querySelectorAll(".ng-scope");
+		for(var i=0, len = ngscopes.length; i < len; i++){
+			var scope = angular.element(ngscopes[i]).scope();
+			// The $$watchers value starts out as NULL.
+			total += scope.$$watchers ? scope.$$watchers.length : 0;
+		}
 		
 		alert(total + ((total == 1)?' Watch is':' Watchers are' + ' using in the application'));
 	}
